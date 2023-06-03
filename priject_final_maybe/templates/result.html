@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title >Gold Price Result </title>
+	<style>
+img {
+	    display: block;
+	    margin: 0 auto;
+	    max-width: 800px;
+			background-color: gold;
+	}
+	/*page stuff*/
+	html {
+		height: 100%;
+	}
+	html {
+	    margin: 0;
+	    padding: 0;
+	    font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
+	    font-size: 62.5%;
+	    color: white;
+	    background: linear-gradient(to bottom right, gold,black);
+	}
+
+	/*title*/
+	.title{
+		font-size:30px;
+	  text-align:center;
+	  line-height:1.5em;
+	  padding-bottom:45px;
+	  font-family:"Playfair Display", serif;
+	  text-transform:uppercase;
+	  letter-spacing: 2px;
+	  color:gold;
+	  z-index: 1;
+	  position: relative;
+	}
+
+	p{
+		padding: 15px;
+	  position: absolute;
+	  color: black;
+	  top: 15%;
+	  left: 31%;
+	  font-family: "Roboto Mono",monospace;
+	  font-size: 18px;
+	}
+
+	table, th, td{
+		margin-left: auto;
+ 		margin-right: auto;
+		border: 3px solid;
+		width: 50%;
+		border-color: black
+	}
+	th{
+		color: black;
+		font-family: "Roboto Mono",monospace;
+	  font-size: 25px;
+	}
+	td{
+		color: black;
+		font-family: "Roboto Mono",monospace;
+	  font-size: 20px;
+	}
+
+	div{
+		margin: 50px;
+	}
+
+	</style>
+</head>
+<body>
+<div>
+	<h1 class ="title">Gold Price for {{ date }} </h1>
+	<p>The gold price is {{ value }} USD for one oz</p>
+</div>
+<div>
+	<table>
+ <tr>
+	 <th>curencies</th>
+	 <th>ounce</th>
+	 <th>gram</th>
+ </tr>
+ <tr>
+	 <td>USD</td>
+	 <td>{{value}}</td>
+	 <td>{{value / 28.3495}}</td>
+ </tr>
+ <tr>
+	 <td>EURO</td>
+	 <td>{{value * 0.91}}</td>
+	 <td>{{(value * 0.91)/28.3495}}</td>
+ </tr>
+ <tr>
+	 <td>MAD</td>
+	 <td>{{value * 10.10}}</td>
+	 <td>{{(value*10.10)/28.3495}}</td>
+ </tr>
+</table>
+
+</div>
+
+</body>
+</html>

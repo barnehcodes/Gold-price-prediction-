@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+
+
+.title {
+  font-size:30px;
+  text-align:center;
+  line-height:1.5em;
+  padding-bottom:45px;
+  font-family:"Playfair Display", serif;
+  text-transform:uppercase;
+  letter-spacing: 2px;
+  color:gold;
+  z-index: 1;
+  position: relative;
+
+}
+.title::before{
+  position: absolute;
+  left: 0;
+  bottom: 62px;
+  width: 100%;
+  left:30%; margin-left:-30%;
+  height: 1px;
+  content: "";
+  background-color: black; z-index: 2;
+
+}
+.title::after{
+  position:relative;
+  width:40px; height:40px; left:50%; margin-left:-20px; bottom:0px;
+  content: '\00a7';
+  font-size:30px; line-height:40px; color:black;
+  font-weight:400; z-index: 5;
+  display:block;
+  background-color:rgba(255, 255, 255, 0);
+}
+
+
+input[type="date"]{
+    background-color: black;
+    padding: 15px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 30%;
+    left: 50%;
+    font-family: "Roboto Mono",monospace;
+    color: gold;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;}
+
+    ::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;}
+
+    button[type="submit"]{
+      background-color: black;
+      padding: 15px;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 40%;
+      left: 50%;
+      font-family: "Roboto Mono",monospace;
+      color: gold;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+/*page stuff*/
+
+html {
+  height: 100%;
+}
+
+/*body {
+   background: linear-gradient(to bottom right, gold, black);
+}*/
+html {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
+    font-size: 62.5%;
+    color: white;
+    background: linear-gradient(to bottom right, gold,black);
+}
+label[for ='date']{
+  padding: 15px;
+  position: absolute;
+  color: black;
+  top: 15%;
+  left: 40%;
+  font-family: "Roboto Mono",monospace;
+  font-size: 18px;
+}
+
+.notice{
+  padding: 15px;
+  position: absolute;
+  top:50%
+}
+.new_label{
+  font-family: "Roboto Mono",monospace;
+  padding: 0px;
+  top: 00%;
+  position: absolute;
+  color: black;
+  font-size: 18px;
+}
+p{
+  font-family: inherit;
+  padding:10px
+  position: relative;;
+  color: black;
+  font-size: 14px;
+}
+
+</style>
+
+
+
+
+</head>
+<body >
+  <div>
+	<h1 class = "title">Gold Price Lookup</h1>
+	<form action="/gold_price" method="post">
+		<label id = 'enter_date' for="date">Enter the date you wish:</label>
+		<input type="date" id="date" name="date" required>
+		<button type="submit">Get Price</button>\
+
+	</form>
+</div>
+
+<div class = 'notice'>
+<label class= 'new_label'>please keep in mind :</label>
+<p>- this website uses historical data to predict the future price of gold</p>
+<p>- because of lack of consistent data some dates havent been recorded or have been lost </p>
+<p>- so we used multipale datasets from diffrents sources and added them togther</p>
+<p>- in conclusion these predictions arent to be taken as source for financial disision making or purshases</p>
+<p>- but just to get an idea for <strong>what could be not what would be</strong></p>
+</div>
+</body>
+</html>
